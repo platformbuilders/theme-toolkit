@@ -20,7 +20,6 @@ const extractValue = (itemValue: any, parentKey: any): any => {
 export const themeFormatter = (rawTheme: any): ThemeType => {
   const objMap = new Map(Object.entries(rawTheme));
   const themeMap = {} as any;
-  console.log('passou1');
   objMap.forEach((item: any, parentKey) => {
     const itemMap = extractValue(item, parentKey);
     themeMap[parentKey] = itemMap;
