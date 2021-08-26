@@ -1,5 +1,5 @@
 ![check](https://github.com/platformbuilders/use-hooks/workflows/check/badge.svg)
 
-# @platformbuilders/theme-toolkiton
+# @platformbuilders/theme-toolkit
 
 ## Theme Toolkit
