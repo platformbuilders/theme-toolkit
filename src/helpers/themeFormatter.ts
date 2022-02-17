@@ -1,5 +1,16 @@
+import { LevelShadow } from '../theme_types/BoxShadows';
 import { THEME_TYPE } from '../enums';
 import { ThemeType } from '../theme_types/Theme';
+
+const getShadow = (shadow: LevelShadow) => {
+  if (!!shadow.color) {
+    const colorValues = shadow.color
+      .replace('rgba(', '')
+      .replace(')', '')
+      .split(',');
+    return `elevation: ${shadow.blur}; box-shadow: ${shadow.x}px ${shadow.y}px ${shadow.blur}px rgb(${colorValues[0]}, ${colorValues[1]}, ${colorValues[2]}); shadow-opacity: ${colorValues[3]};`;
+  } else return '';
+};
 
 const extractValue = (itemValue: any, parentKey: any): any => {
   const itemMap = {} as any;
@@ -11,7 +22,12 @@ const extractValue = (itemValue: any, parentKey: any): any => {
       if ('value' in item) {
         if (item.type === THEME_TYPE.OPACITY && typeof item.value === 'string')
           itemMap[itemKey] = parseFloat(item.value) / 100.0;
-        else itemMap[itemKey] = item.value;
+        else if (
+          item.type === THEME_TYPE.BOX_SHADOW &&
+          typeof item.value === 'object'
+        ) {
+          itemMap[itemKey] = getShadow(item.value);
+        } else itemMap[itemKey] = item.value;
       } else {
         itemMap[itemKey] = extractValue(item, itemKey);
       }
