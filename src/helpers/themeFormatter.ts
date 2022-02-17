@@ -1,3 +1,4 @@
+import { THEME_TYPE } from '../enums';
 import { ThemeType } from '../theme_types/Theme';
 
 const extractValue = (itemValue: any, parentKey: any): any => {
@@ -8,7 +9,9 @@ const extractValue = (itemValue: any, parentKey: any): any => {
     const itemObjMap = new Map(Object.entries(itemValue));
     itemObjMap.forEach((item: any, itemKey) => {
       if ('value' in item) {
-        itemMap[itemKey] = item.value;
+        if (item.type === THEME_TYPE.OPACITY && typeof item.value === 'string')
+          itemMap[itemKey] = parseFloat(item.value) / 100.0;
+        else itemMap[itemKey] = item.value;
       } else {
         itemMap[itemKey] = extractValue(item, itemKey);
       }
