@@ -7,9 +7,10 @@ export interface LevelShadow {
 }
 
 export interface BoxShadows {
-  lv1: LevelShadow;
-  lv2: LevelShadow;
-  lv3: LevelShadow;
-  lv4: LevelShadow;
-  lv5: LevelShadow;
+  z0: LevelShadow;
+  z1: LevelShadow;
+  z2: LevelShadow;
+  z3: LevelShadow;
+  z4: LevelShadow;
+  z5: LevelShadow;
 }
