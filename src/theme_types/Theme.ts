@@ -12,6 +12,5 @@ export type ThemeType = Colors &
     borderRadius: BorderRadius;
     borderWidth: BorderWidth;
     boxShadow: BoxShadows;
-    boxShadowWeb: BoxShadows;
     typography: TypographyTheme;
   };

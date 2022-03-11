@@ -33,7 +33,10 @@ const extractValue = (itemValue: any, parentKey: any): any => {
           typeof item.value === 'object'
         ) {
           itemMap[itemKey] = getShadow(item.value);
-          itemMap[`${THEME_TYPE.BOX_SHADOW_WEB}`] = getShadowWeb(item.value);
+          itemMap['web'] = {
+            ...itemMap['web'],
+            [itemKey]: getShadowWeb(item.value),
+          };
         } else itemMap[itemKey] = item.value;
       } else {
         itemMap[itemKey] = extractValue(item, itemKey);
