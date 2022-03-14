@@ -1,6 +1,7 @@
 import { LevelShadow } from '../theme_types/BoxShadows';
 import { THEME_TYPE } from '../enums';
 import { ThemeType } from '../theme_types/Theme';
+import isWeb from './isWeb';
 
 const getShadow = (shadow: LevelShadow) => {
   if (!!shadow.color) {
@@ -8,13 +9,9 @@ const getShadow = (shadow: LevelShadow) => {
       .replace('rgba(', '')
       .replace(')', '')
       .split(',');
-    return `elevation: ${shadow.blur}; box-shadow: ${shadow.x}px ${shadow.y}px ${shadow.blur}px rgb(${colorValues[0]}, ${colorValues[1]}, ${colorValues[2]}); shadow-opacity: ${colorValues[3]};`;
-  } else return '';
-};
-
-const getShadowWeb = (shadow: LevelShadow) => {
-  if (!!shadow.color) {
-    return `box-shadow: ${shadow.x}px ${shadow.y}px ${shadow.blur}px ${shadow.color};`;
+    return isWeb()
+      ? `box-shadow: ${shadow.x}px ${shadow.y}px ${shadow.blur}px ${shadow.color};`
+      : `elevation: ${shadow.blur}; box-shadow: ${shadow.x}px ${shadow.y}px ${shadow.blur}px rgb(${colorValues[0]}, ${colorValues[1]}, ${colorValues[2]}); shadow-opacity: ${colorValues[3]};`;
   } else return '';
 };
 
@@ -33,10 +30,6 @@ const extractValue = (itemValue: any, parentKey: any): any => {
           typeof item.value === 'object'
         ) {
           itemMap[itemKey] = getShadow(item.value);
-          itemMap['web'] = {
-            ...itemMap['web'],
-            [itemKey]: getShadowWeb(item.value),
-          };
         } else itemMap[itemKey] = item.value;
       } else {
         itemMap[itemKey] = extractValue(item, itemKey);
