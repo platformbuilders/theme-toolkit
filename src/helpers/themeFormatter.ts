@@ -12,6 +12,12 @@ const getShadow = (shadow: LevelShadow) => {
   } else return '';
 };
 
+const getShadowWeb = (shadow: LevelShadow) => {
+  if (!!shadow.color) {
+    return `box-shadow: ${shadow.x}px ${shadow.y}px ${shadow.blur}px ${shadow.color};`;
+  } else return '';
+};
+
 const extractValue = (itemValue: any, parentKey: any): any => {
   const itemMap = {} as any;
   if ('value' in itemValue) {
@@ -27,6 +33,10 @@ const extractValue = (itemValue: any, parentKey: any): any => {
           typeof item.value === 'object'
         ) {
           itemMap[itemKey] = getShadow(item.value);
+          itemMap['web'] = {
+            ...itemMap['web'],
+            [itemKey]: getShadowWeb(item.value),
+          };
         } else itemMap[itemKey] = item.value;
       } else {
         itemMap[itemKey] = extractValue(item, itemKey);
