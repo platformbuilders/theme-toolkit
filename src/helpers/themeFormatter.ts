@@ -1,6 +1,6 @@
 import { LevelShadow } from '../theme_types/BoxShadows';
 import { THEME_TYPE } from '../enums';
-import { ThemeType } from '../theme_types/Theme';
+import { FluidTheme } from '../index';
 import isWeb from './isWeb';
 
 const getShadow = (shadow: LevelShadow) => {
@@ -39,12 +39,12 @@ const extractValue = (itemValue: any, parentKey: any): any => {
   return itemMap;
 };
 
-export const themeFormatter = (rawTheme: any): ThemeType => {
+export const themeFormatter = (rawTheme: any): FluidTheme => {
   const objMap = new Map(Object.entries(rawTheme));
   const themeMap = {} as any;
   objMap.forEach((item: any, parentKey) => {
     const itemMap = extractValue(item, parentKey);
     themeMap[parentKey] = itemMap;
   });
-  return themeMap as ThemeType;
+  return themeMap as FluidTheme;
 };
