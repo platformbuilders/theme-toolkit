@@ -18,7 +18,7 @@ module.exports = {
     SharedArrayBuffer: 'readonly',
     __DEV__: true,
   },
-  ignorePatterns: ['node_modules/', 'dist'],
+  ignorePatterns: ['node_modules/', 'dist', 'src/helpers/__tests__'],
   rules: {
     '@typescript-eslint/member-delimiter-style': 0,
     '@typescript-eslint/no-empty-function': 0,
