@@ -20,13 +20,8 @@
     "start": "rollup -c -w --bundleConfigAsCjs",
     "pretty": "prettier --config ./.prettierrc.js --write \"src/**/*.{js,jsx,ts,tsx,json}\"",
     "lint": "tsc && eslint '*/**/*.{ts, tsx}' --fix",
-    "test": "jest"
-  },
-  "lint-staged": {
-    "**/*.ts?(x)": [
-      "yarn pretty",
-      "yarn lint"
-    ]
+    "test": "jest",
+    "prepare": "husky install && yarn build"
   },
   "devDependencies": {
     "@babel/core": "7.20.2",
