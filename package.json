@@ -1,6 +1,6 @@
 {
   "name": "@platformbuilders/theme-toolkit",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "Theme helpers to use combined with Fluid React Elements ",
   "author": "Platform Builders <apps@platformbuilders.io>",
   "license": "ISC",

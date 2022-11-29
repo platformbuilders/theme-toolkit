@@ -3,6 +3,6 @@ import { FluidTheme, ThemeProps } from '../index';
 
 export const getTheme =
   (themeProp: Flatten<FluidTheme>) =>
-  ({ theme }: ThemeProps): string | number => {
-    return get(theme, themeProp) || '';
+  ({ theme }: ThemeProps): string | number | null => {
+    return get(theme, themeProp) || null;
   };
