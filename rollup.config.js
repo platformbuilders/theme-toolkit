@@ -33,7 +33,7 @@ export default {
     commonjs({
       include: /node_modules/,
       namedExports: {
-        'node_modules/lodash/lodash.js': ['get', 'isFunction'],
+        'node_modules/lodash/lodash.js': ['get', 'isNumber', 'isFunction'],
       },
     }),
   ],
