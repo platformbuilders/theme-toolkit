@@ -2,6 +2,13 @@ import theme from './mocks/themeFormated.json';
 import { getTheme } from '../getTheme';
 
 describe('getTheme()', () => {
+  test('should get rem spacing md', () => {
+    const spacingMd = getTheme('spacing.md', { format: 'rem' })({
+      theme,
+    });
+    expect(spacingMd).toBe('1rem');
+  });
+
   test('should get brand primary color', () => {
     const brandPrimaryColor = getTheme('brand.primary.main')({ theme });
     expect(brandPrimaryColor).toBe(theme.brand.primary.main);
