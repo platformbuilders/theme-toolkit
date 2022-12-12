@@ -1,16 +1,24 @@
 import { get } from 'lodash';
-import { pxToRem } from './pxToRem';
 import { FluidTheme, ThemeProps } from '../index';
+import { pxToRem } from './pxToRem';
 
 enum TypeValue {
-  rem = 'rem'
+  rem = 'rem',
 }
 
 export const getTheme =
-  (themeProp: Flatten<FluidTheme>, options?: { format: keyof typeof TypeValue }) =>
+  (
+    themeProp: Flatten<FluidTheme>,
+    options?: { format: keyof typeof TypeValue },
+  ) =>
   ({ theme }: ThemeProps): string | number | null => {
-    const parameter = get(theme, themeProp) || null;
-    if(options?.format === TypeValue.rem){
+    const parameter = get(theme, themeProp) || '';
+    if (
+      options?.format === TypeValue.rem ||
+      (!String(parameter).includes('rgb') &&
+        !String(parameter).includes('#') &&
+        !!document)
+    ) {
       return pxToRem(parameter || 0);
     }
 
