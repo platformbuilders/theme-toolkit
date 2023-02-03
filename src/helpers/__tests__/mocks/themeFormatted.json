@@ -77,7 +77,10 @@
         "90": "#3D53A1E6"
       }
     },
-    "contrast": "#F8F9FA"
+    "contrast": {
+      "value": "#F8F9FA",
+      "type": "color_base"
+    }
   },
   "accent": {
     "main": {
