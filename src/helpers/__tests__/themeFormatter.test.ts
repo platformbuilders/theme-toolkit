@@ -1,8 +1,8 @@
 import themeJson from './mocks/theme.json';
-import themeFormatedJson from './mocks/themeFormated.json';
+import themeFormattedJson from './mocks/themeFormatted.json';
 import { themeFormatter } from '../themeFormatter';
 
-test('should formated theme.json', async () => {
-  const themeFormated = await themeFormatter(themeJson);
-  expect(themeFormated).toMatchObject(themeFormatedJson);
+test('should formatted theme.json', async () => {
+  const themeFormatted = await themeFormatter(themeJson);
+  expect(themeFormatted).toMatchObject(themeFormattedJson);
 });
