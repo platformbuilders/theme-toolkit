@@ -5,6 +5,7 @@ export enum THEME_TYPE {
   BORDER_WIDTH = 'borderWidth',
   BOX_SHADOW = 'boxShadow',
   COLOR = 'color',
+  COLOR_BASE = 'color_base',
   LETTER_SPACING = 'letterSpacing',
   OPACITY = 'opacity',
   FONT_WEIGHTS = 'fontWeights',

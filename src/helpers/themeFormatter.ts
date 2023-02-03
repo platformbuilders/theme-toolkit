@@ -3,7 +3,7 @@ import { THEME_TYPE } from '../enums';
 import { FluidTheme } from '../index';
 import isWeb from './isWeb';
 
-const getShadow = (shadow: LevelShadow) => {
+const getShadow = (shadow: LevelShadow): string => {
   if (!!shadow.color) {
     const colorValues = shadow.color
       .replace('rgba(', '')
@@ -15,26 +15,48 @@ const getShadow = (shadow: LevelShadow) => {
   } else return '';
 };
 
-const extractValue = (itemValue: any, parentKey: any): any => {
+const formatItemMap = (itemMap: any) => (item: any, itemKey: any) => {
+  if (typeof item !== 'object') return;
+
+  if (item.type === THEME_TYPE.COLOR_BASE) {
+    for (const [key, value] of Object.entries(item)) {
+      if (key === 'opacity') {
+        itemMap[itemKey] = {
+          ...itemMap[itemKey],
+          [key]: {
+            ...extractValue(value, key),
+          },
+        };
+      } else {
+        itemMap[itemKey] = {
+          ...itemMap[itemKey],
+          [key]: value,
+        };
+      }
+    }
+    return;
+  }
+
+  if ('value' in item) {
+    if (item.type === THEME_TYPE.OPACITY && typeof item.value === 'string') {
+      itemMap[itemKey] = parseFloat(item.value) / 100.0;
+    } else if (item.type === THEME_TYPE.BOX_SHADOW) {
+      itemMap[itemKey] = getShadow(item.value);
+    } else {
+      itemMap[itemKey] = item.value;
+    }
+  } else {
+    itemMap[itemKey] = extractValue(item, itemKey);
+  }
+};
+
+const extractValue = (itemValue: any, parentKey: any) => {
   const itemMap = {} as any;
-  if ('value' in itemValue) {
+  if (typeof itemValue === 'object' && 'value' in itemValue) {
     itemMap[parentKey] = itemValue.value;
   } else {
     const itemObjMap = new Map(Object.entries(itemValue));
-    itemObjMap.forEach((item: any, itemKey) => {
-      if ('value' in item) {
-        if (item.type === THEME_TYPE.OPACITY && typeof item.value === 'string')
-          itemMap[itemKey] = parseFloat(item.value) / 100.0;
-        else if (
-          item.type === THEME_TYPE.BOX_SHADOW &&
-          typeof item.value === 'object'
-        ) {
-          itemMap[itemKey] = getShadow(item.value);
-        } else itemMap[itemKey] = item.value;
-      } else {
-        itemMap[itemKey] = extractValue(item, itemKey);
-      }
-    });
+    itemObjMap.forEach(formatItemMap(itemMap));
   }
   return itemMap;
 };
@@ -42,9 +64,11 @@ const extractValue = (itemValue: any, parentKey: any): any => {
 export const themeFormatter = (rawTheme: any): FluidTheme => {
   const objMap = new Map(Object.entries(rawTheme));
   const themeMap = {} as any;
+
   objMap.forEach((item: any, parentKey) => {
     const itemMap = extractValue(item, parentKey);
     themeMap[parentKey] = itemMap;
   });
+
   return themeMap as FluidTheme;
 };
