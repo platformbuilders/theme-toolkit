@@ -15,15 +15,15 @@ import { TypographyType, TypographyVariants } from './theme_types/Typography';
 import { Depth } from './theme_types/Depth';
 import { ButtonVariants } from './theme_types/Button';
 import { LoadingVariants } from './theme_types/Loading';
+import { ThemeRadius } from './theme_types/ThemeRadius';
 
 interface FluidTheme extends Colors, Animations {
   spacing: Spacing;
   borderRadius: BorderRadius;
   borderWidth: BorderWidth;
-  lineHeight: LineHeight;
+  boxShadow: Depth;
   opacity: Opacity;
-  fontSizes: FontSizes;
-  background: Depth;
+  themeRadius: ThemeRadius;
 }
 
 export type ThemeProps = {

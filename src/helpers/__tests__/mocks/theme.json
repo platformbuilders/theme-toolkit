@@ -262,7 +262,7 @@
     },
     "contrast": {
       "value": "#F8F9FA",
-      "type": "color"
+      "type": "color_base"
     }
   },
   "accent": {
