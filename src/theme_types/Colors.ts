@@ -1,21 +1,42 @@
 import { StatusBarStyle as RNBarStyle } from 'react-native';
-import { Depth } from './Depth';
+
+interface ColorOpacity {
+  '10': string;
+  '20': string;
+  '30': string;
+  '40': string;
+  '50': string;
+  '60': string;
+  '70': string;
+  '80': string;
+  '90': string;
+}
+
+interface ColorWithOpacity {
+  value: string;
+  opacity: ColorOpacity;
+}
 
 interface BaseColor {
-  contrast: string;
+  contrast: ColorWithOpacity;
 }
 
 interface DefaultColors extends BaseColor {
+  light: ColorWithOpacity;
+  main: ColorWithOpacity;
+  dark: ColorWithOpacity;
+}
+
+interface BackgroundColors {
   light: string;
   main: string;
   dark: string;
+  contrast: string;
 }
 
-interface BrandColors {
-  primary: DefaultColors;
-  secondary: DefaultColors;
-  tertiary: DefaultColors;
-  accent: DefaultColors;
+interface TextColors {
+  default: ColorWithOpacity;
+  link: string;
 }
 
 export interface StatusBarStyle {
@@ -25,9 +46,12 @@ export interface StatusBarStyle {
 
 // Theme dark/light
 export interface Colors {
-  background: Depth;
-  text: DefaultColors;
-  brand: BrandColors;
+  background: BackgroundColors;
+  text: TextColors;
+  primary: DefaultColors;
+  secondary: DefaultColors;
+  tertiary: DefaultColors;
+  accent: DefaultColors;
   danger: DefaultColors;
   warning: DefaultColors;
   success: DefaultColors;
