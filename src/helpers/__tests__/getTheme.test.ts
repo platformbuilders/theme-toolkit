@@ -1,5 +1,5 @@
-import theme from './mocks/themeFormatted.json';
 import { getTheme } from '../getTheme';
+import theme from './mocks/themeFormatted.json';
 
 describe('getTheme()', () => {
   test('should get brand primary color', () => {

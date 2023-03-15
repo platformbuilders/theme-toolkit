@@ -3,19 +3,19 @@ export * from './enums';
 
 import { DefaultTheme } from 'styled-components';
 
-import { Animations, AnimationObject } from './theme_types/Animations';
+import { AnimationObject, Animations } from './theme_types/Animations';
 import { BorderRadius } from './theme_types/BorderRadius';
 import { BorderWidth } from './theme_types/BorderWidth';
+import { ButtonVariants } from './theme_types/Button';
 import { Colors } from './theme_types/Colors';
+import { Depth } from './theme_types/Depth';
 import { FontSizes } from './theme_types/FontSizes';
 import { LineHeight } from './theme_types/LineHeight';
+import { LoadingVariants } from './theme_types/Loading';
 import { Opacity } from './theme_types/Opacity';
 import { Spacing } from './theme_types/Spacing';
-import { TypographyType, TypographyVariants } from './theme_types/Typography';
-import { Depth } from './theme_types/Depth';
-import { ButtonVariants } from './theme_types/Button';
-import { LoadingVariants } from './theme_types/Loading';
 import { ThemeRadius } from './theme_types/ThemeRadius';
+import { TypographyType, TypographyVariants } from './theme_types/Typography';
 
 interface FluidTheme extends Colors, Animations {
   spacing: Spacing;

@@ -1,6 +1,6 @@
-import { LevelShadow } from '../theme_types/BoxShadows';
 import { THEME_TYPE } from '../enums';
 import { FluidTheme } from '../index';
+import { LevelShadow } from '../theme_types/BoxShadows';
 import isWeb from './isWeb';
 
 const getShadow = (shadow: LevelShadow): string => {
