@@ -1,5 +1,5 @@
 import themeFormattedJson from '../../example_formatted.json';
-import { getFontSize } from '../getFontSize';
+import { baseFontSize, getFontSize } from '../getFontSize';
 import { getTheme } from '../getTheme';
 
 const theme: any = themeFormattedJson;
@@ -24,5 +24,14 @@ describe('getFontSize()', () => {
       theme,
     });
     expect(size).toBe(themeFontSize);
+  });
+  test('should get baseFontSize', () => {
+    const variant = 'wrongValue';
+
+    const size = getFontSize({
+      variant,
+      theme,
+    });
+    expect(size).toBe(baseFontSize);
   });
 });
