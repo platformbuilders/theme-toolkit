@@ -2,6 +2,7 @@ import typescript from 'rollup-plugin-typescript2';
 import commonjs from 'rollup-plugin-commonjs';
 import external from 'rollup-plugin-peer-deps-external';
 import resolve from 'rollup-plugin-node-resolve';
+import json from '@rollup/plugin-json';
 import url from 'rollup-plugin-url';
 
 import pkg from './package.json';
@@ -24,6 +25,7 @@ export default {
   ],
   plugins: [
     external(),
+    json(),
     url({ exclude: ['**/*.svg'] }),
     resolve(),
     typescript({
@@ -33,7 +35,7 @@ export default {
     commonjs({
       include: /node_modules/,
       namedExports: {
-        'node_modules/lodash/lodash.js': ['get', 'isFunction'],
+        'node_modules/lodash/lodash.js': ['get', 'isFunction', 'toNumber'],
       },
     }),
   ],

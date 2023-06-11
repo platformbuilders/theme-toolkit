@@ -8,13 +8,3 @@ export type TypographyVariants =
   | 'xl'
   | 'xxl'
   | 'max';
-
-export interface TypographyType {
-  variant?: TypographyVariants;
-  lineHeightVariant?: TypographyVariants;
-  children?: string | string[] | any;
-  textRef?: any;
-  id?: string;
-  accessibility?: string;
-  numberOfLines?: number;
-}

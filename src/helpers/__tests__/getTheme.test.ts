@@ -1,52 +1,39 @@
+import themeFormattedJson from '../../example_formatted.json';
 import { getTheme } from '../getTheme';
-import theme from './mocks/themeFormatted.json';
+
+const theme: any = themeFormattedJson;
 
 describe('getTheme()', () => {
   test('should get brand primary color', () => {
-    const brandPrimaryColor = getTheme('primary.main.value')({ theme });
-    expect(brandPrimaryColor).toBe(theme.primary.main.value);
+    const brandPrimaryColor = getTheme('brand.primary.main')({ theme });
+    expect(brandPrimaryColor).toBe(theme.brand.primary.main);
   });
 
   test('should get brand primary constrat color', () => {
-    const brandPrimaryColor = getTheme('primary.contrast.value')({ theme });
-    expect(brandPrimaryColor).toBe(theme.primary.contrast.value);
-  });
-
-  test('should get brand primary color with 10% opacity', () => {
-    const brandPrimaryColor = getTheme('primary.main.opacity.10')({ theme });
-    expect(brandPrimaryColor).toBe(theme.primary.main.opacity['10']);
+    const brandPrimaryColor = getTheme('brand.primary.contrast')({ theme });
+    expect(brandPrimaryColor).toBe(theme.brand.primary.contrast);
   });
 
   test('should get brand secondary color', () => {
-    const brandSecondaryColor = getTheme('secondary.main.value')({ theme });
-    expect(brandSecondaryColor).toBe(theme.secondary.main.value);
+    const brandSecondaryColor = getTheme('brand.secondary.main')({
+      theme,
+    });
+    expect(brandSecondaryColor).toBe(theme.brand.secondary.main);
   });
 
   test('should get brand secondary constrat color', () => {
-    const brandSecondaryColor = getTheme('secondary.contrast.value')({ theme });
-    expect(brandSecondaryColor).toBe(theme.secondary.contrast.value);
-  });
-
-  test('should get brand secondary color with 10% opacity', () => {
-    const brandSecondaryColor = getTheme('secondary.main.opacity.10')({
-      theme,
-    });
-    expect(brandSecondaryColor).toBe(theme.secondary.main.opacity['10']);
+    const brandSecondaryColor = getTheme('brand.secondary.contrast')({ theme });
+    expect(brandSecondaryColor).toBe(theme.brand.secondary.contrast);
   });
 
   test('should get brand accent color', () => {
-    const brandAccentColor = getTheme('accent.main.value')({ theme });
-    expect(brandAccentColor).toBe(theme.accent.main.value);
+    const brandAccentColor = getTheme('brand.accent.main')({ theme });
+    expect(brandAccentColor).toBe(theme.brand.accent.main);
   });
 
   test('should get brand accent constrat color', () => {
-    const brandAccentColor = getTheme('accent.contrast.value')({ theme });
-    expect(brandAccentColor).toBe(theme.accent.contrast.value);
-  });
-
-  test('should get brand accent color with 10% opacity', () => {
-    const brandAccentColor = getTheme('accent.main.opacity.10')({ theme });
-    expect(brandAccentColor).toBe(theme.accent.main.opacity['10']);
+    const brandAccentColor = getTheme('brand.accent.contrast')({ theme });
+    expect(brandAccentColor).toBe(theme.brand.accent.contrast);
   });
 
   test('should get spacing medium', () => {
@@ -70,13 +57,8 @@ describe('getTheme()', () => {
   });
 
   test('should get background color main', () => {
-    const backgroundColorMain = getTheme('background.main')({ theme });
-    expect(backgroundColorMain).toBe(theme.background.main);
-  });
-
-  test('should get opacity empty', () => {
-    const opacityEmpty = getTheme('opacity.empty')({ theme });
-    expect(opacityEmpty).toBe(theme.opacity.empty);
+    const backgroundColorMain = getTheme('background.z0')({ theme });
+    expect(backgroundColorMain).toBe(theme.background.z0);
   });
 
   test('should get theme button radius', () => {

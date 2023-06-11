@@ -1,8 +1,8 @@
 {
   "name": "@platformbuilders/theme-toolkit",
-  "version": "0.1.5",
-  "description": "Theme helpers to use combined with Fluid React Elements ",
-  "author": "Platform Builders <apps@platformbuilders.io>",
+  "version": "0.2.0",
+  "description": "Theme helpers to use combined with Fluid Design System.",
+  "author": "Platform Builders <digitals@platformbuilders.io>",
   "license": "ISC",
   "repository": {
     "type": "git",
@@ -20,14 +20,24 @@
     "start": "rollup -c -w --bundleConfigAsCjs",
     "pretty": "prettier --config ./.prettierrc.js --write \"src/**/*.{js,jsx,ts,tsx,json}\"",
     "lint": "tsc && eslint '*/**/*.{ts, tsx}' --fix",
-    "test": "jest",
+    "test": "jest --passWithNoTests --collect-coverage",
+    "test:coverage": "yarn test -- --coverage",
+    "test:watch": "yarn test -- --watch",
     "prepare": "husky install && yarn build"
+  },
+  "lint-staged": {
+    "*.{ts,tsx}": [
+      "yarn pretty",
+      "yarn lint",
+      "yarn test"
+    ]
   },
   "devDependencies": {
     "@babel/core": "7.20.2",
     "@babel/preset-env": "7.20.2",
     "@babel/preset-typescript": "7.18.6",
     "@platformbuilders/eslint-config-builders": "0.1.2",
+    "@rollup/plugin-json": "^6.0.0",
     "@types/jest": "29.2.3",
     "@types/lodash": "4.14.189",
     "@types/react-native": "0.70.6",
@@ -62,6 +72,7 @@
     "typescript": "4.9.3"
   },
   "dependencies": {
+    "@platformbuilders/helpers": "^0.8.2",
     "lodash": "4.17.21"
   }
 }
