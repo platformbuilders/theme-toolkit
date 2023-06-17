@@ -1,6 +1,6 @@
 import { DefaultTheme } from 'styled-components';
-import FormattedThemeExample from './example_formatted.json';
-import FluidThemeExample from './example_theme.json';
+import FormattedThemeExample from './examples/example_formatted.json';
+import FluidThemeExample from './examples/example_theme.json';
 
 export { FluidThemeExample, FormattedThemeExample };
 
@@ -18,7 +18,7 @@ import {
   ThemeRadius,
 } from './theme_types';
 
-export interface FluidTheme {
+export interface FluidTheme extends DefaultTheme {
   statusBar?: StatusBarStyle;
   spacing: Spacing;
   borderRadius: BorderRadius;
