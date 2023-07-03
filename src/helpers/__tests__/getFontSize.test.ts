@@ -1,4 +1,4 @@
-import themeFormattedJson from '../../example_formatted.json';
+import themeFormattedJson from '../../examples/example_formatted.json';
 import { baseFontSize, getFontSize } from '../getFontSize';
 import { getTheme } from '../getTheme';
 

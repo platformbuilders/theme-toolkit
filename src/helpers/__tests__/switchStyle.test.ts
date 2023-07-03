@@ -1,4 +1,4 @@
-import theme from '../../example_theme.json';
+import theme from '../../examples/example_theme.json';
 import { switchStyle } from '../switchStyle';
 
 describe('switchStyle()', () => {
