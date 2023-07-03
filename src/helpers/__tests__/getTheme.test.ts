@@ -1,4 +1,4 @@
-import themeFormattedJson from '../../example_formatted.json';
+import themeFormattedJson from '../../examples/example_formatted.json';
 import { getTheme } from '../getTheme';
 
 const theme: any = themeFormattedJson;

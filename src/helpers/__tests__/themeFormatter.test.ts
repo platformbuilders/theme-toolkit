@@ -1,5 +1,5 @@
-import themeFormattedJson from '../../example_formatted.json';
-import themeJson from '../../example_theme.json';
+import themeFormattedJson from '../../examples/example_formatted.json';
+import themeJson from '../../examples/example_theme.json';
 import { themeFormatter } from '../themeFormatter';
 
 test('should formatted theme.json', async () => {
