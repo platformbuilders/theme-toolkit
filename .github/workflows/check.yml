@@ -8,5 +8,3 @@ on:
 jobs:
   call-workflow:
     uses: platformbuilders/actions-workflows/.github/workflows/check-react-lib.yml@fix/checkLib
-    secrets:
-      SONAR_TOKEN: "123123123"
