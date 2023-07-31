@@ -12,3 +12,4 @@ export { Opacity } from './Opacity';
 export { Spacing } from './Spacing';
 export { ThemeRadius } from './ThemeRadius';
 export { TypographyVariants } from './Typography';
+export { BreakpointsType } from './Breakpoints';
