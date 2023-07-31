@@ -19,6 +19,7 @@ module.exports = {
   collectCoverageFrom: [
     '<rootDir>/src/helpers/*.{ts,tsx}',
     '!<rootDir>/src/helpers/index.ts',
+    '!<rootDir>/src/helpers/breakpoints.ts',
     '!<rootDir>/src/theme_types/*.{ts,tsx}',
     '!**/*.d.ts',
   ],
