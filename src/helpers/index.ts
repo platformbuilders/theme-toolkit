@@ -5,3 +5,4 @@ export { pxToRem } from './pxToRem';
 export { switchStyle } from './switchStyle';
 export { getFontSize } from './getFontSize';
 export { getLineHeight } from './getLineHeight';
+export { breakpoints } from './breakpoints';
