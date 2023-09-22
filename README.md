@@ -11,10 +11,10 @@ Use o gerenciador de pacotes de sua escolha:
 
 ```bash
 # Usando npm
-npm install theme-toolkit
+npm install @platformbuilders/theme-toolkit
 
 # Usando yarn
-yarn add theme-toolkit
+yarn add @platformbuilders/theme-toolkit
 ```
 
 ### Breakpoints
