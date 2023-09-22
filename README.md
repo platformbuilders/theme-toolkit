@@ -77,8 +77,10 @@ Exemplo:
 import styled from 'styled-components';
 import { getTheme } from 'theme-toolkit';
 
+const successMain = getTheme('success.main');
+
 const Button = styled.button`
-  background-color: ${getTheme('colors.primary')};
+   background-color: ${successMain};
 `;
 ```
 
@@ -90,8 +92,10 @@ Exemplo:
 ```javascript
 import { ifStyle } from 'theme-toolkit';
 
+const isActive = ifStyle('$isActive');
+
 const Button = styled.button`
-  ${ifStyle('primary')('color: blue;', 'color: red;')}
+  width: ${isActive('80px', '60px')};
 `;
 ```
 
