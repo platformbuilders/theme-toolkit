@@ -1,7 +1,7 @@
 export { AnimationObject, Animations } from './Animations';
 export { BorderRadius } from './BorderRadius';
 export { BorderWidth } from './BorderWidth';
-export { ButtonVariants } from './Button';
+export { ButtonColorType, ButtonVariants } from './Button';
 export { DefaultColor } from './Colors';
 export { StatusBarStyle } from './StatusBar';
 export { Depth } from './Depth';
