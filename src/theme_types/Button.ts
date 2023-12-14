@@ -1,4 +1,3 @@
-export type ButtonVariants = 'filled' | 'ghost' | 'tint' | 'outline';
 export type ButtonColorType =
   | 'primary'
   | 'secondary'
@@ -7,3 +6,17 @@ export type ButtonColorType =
   | 'success'
   | 'warning'
   | 'info';
+
+export type ButtonVariants =
+  | 'filled'
+  | 'ghost'
+  | 'tint'
+  | 'outline'
+  | 'primary'
+  | 'secondary'
+  | 'accent'
+  | 'danger'
+  | 'warning'
+  | 'info'
+  | 'flat'
+  | 'invert';
