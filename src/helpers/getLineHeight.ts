@@ -11,5 +11,7 @@ export const getLineHeight = (props: any): number => {
   const lineHeightPercentage = lineHeightVariant
     ? toOnlyNumbers(lineHeightVariant as string)
     : '120';
+    console.log('teste codewall2');
+
   return (Number(fontSizeFromTheme) * Number(lineHeightPercentage)) / 100;
 };
