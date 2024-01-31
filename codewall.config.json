@@ -2,7 +2,7 @@
   "run": true,
   "prompts": [
     {
-      "file_extension": [".tsx", "ts"],
+      "file_extension": [".tsx", ".ts"],
       "content_prompt": "Não pode conter style dentro da tag,Components React fora das pastas services, stores e utils não podem usar Class devem ser Functional Components,Não deve utilizar StyleSheet, Não deve ter console.log, Usar [] em vez de Array<> para type, Não é permitido importar tema diretamente de `~/theme`, Não usar usar dayjs ou moment para formartar data, deve ser usado locale para formatar datas, Deve ser usado cores direto do tema com a função getTheme() em vez de usar cores hexadecimais, Os valores de margin, padding, border radius, border e font size devem ser importados do tema, Nas dependencias do package.json nao pode conter o sinal de \"^\" deve ser usado uma versão fixa por ex: \"1.0.0\""
     }
   ]
