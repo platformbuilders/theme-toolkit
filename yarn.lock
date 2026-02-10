@@ -1536,9 +1536,9 @@
     eslint-plugin-react "^7.32.0"
     eslint-plugin-sonarjs "^0.18.0"
 
-"@platformbuilders/helpers@^0.8.2":
+"@platformbuilders/helpers@0.8.2":
   version "0.8.2"
-  resolved "https://registry.yarnpkg.com/@platformbuilders/helpers/-/helpers-0.8.2.tgz#d9986f1b926f8408ae6b22a4d8724d79878370f7"
+  resolved "https://npm.pkg.github.com/download/@platformbuilders/helpers/0.8.2/d9986f1b926f8408ae6b22a4d8724d79878370f7#d9986f1b926f8408ae6b22a4d8724d79878370f7"
   integrity sha512-wgt1u47aY5CfnNXS/V7rqCMxItWzK/H8sPtN3Lhenanj8lZH1vNttLsi+10ckzKKIPM962DLTGj14XMnQoGkLg==
   dependencies:
     lint-staged "^13.2.2"

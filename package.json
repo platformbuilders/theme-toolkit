@@ -1,8 +1,8 @@
 {
   "name": "@platformbuilders/theme-toolkit",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "description": "Theme helpers to use combined with Fluid Design System.",
-  "author": "Platform Builders <digitals@platformbuilders.io>",
+  "author": "Platform Builders <tecnologia@platformbuilders.io>",
   "license": "ISC",
   "repository": {
     "type": "git",
